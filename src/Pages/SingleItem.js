@@ -2,6 +2,8 @@ import React ,{useContext}from "react"
 import {UsersContext} from "../context/context"
 import { geolocated } from "react-geolocated";
 import GoogleMap from "../map"
+import {Link} from 'react-router-dom';
+import { Menu, Segment } from 'semantic-ui-react';
 
 
 const SingleItem = (props)=>{
@@ -14,6 +16,13 @@ const SingleItem = (props)=>{
     console.log(props.coords)
 
     return(
+        <div>
+        <div className="navigation">
+        <div class="button_cont" align="center">
+            <a class="example_f" href="add-website-here" target="_blank" rel="nofollow">
+                <span>Back</span></a>
+                </div>
+        </div>
         <div className="single-item-container"> 
             <div className="user-image"> <img src={user.picture.medium} alt=""/></div>
             <div className="additional-info"><h2 className="name">{user.name.title}.{user.name.first} {user.name.last}</h2></div>
@@ -24,6 +33,7 @@ const SingleItem = (props)=>{
 
             </div>
             <GoogleMap isMarkerShown/>
+        </div>
         </div>
 
     )
