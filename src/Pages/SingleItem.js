@@ -13,9 +13,8 @@ const SingleItem = (props)=>{
         user.login.username === userId
     )
     const user = singleUser[0]
-    const lta = parseFloat(user.location.coordinates.latitude)
+    const lat = parseFloat(user.location.coordinates.latitude)
     const lng = parseFloat(user.location.coordinates.longitude)
-    console.log( lta + lng)
     return(
         <div>
         <div className="navigation">
@@ -33,9 +32,8 @@ const SingleItem = (props)=>{
             <div className="email"><span>Email: </span>{user.email}</div>
             <div className="number"><span>Number: </span>{user.phone}</div>
             <div className="number"><span>Nationality: </span>{user.nat}</div>
-
             </div>
-            <GoogleMap lat= {lta} lng= {lng }isMarkerShown/>
+            <GoogleMap lat= {lat} lng= {lng }isMarkerShown/>
         </div>
         </div>
 
