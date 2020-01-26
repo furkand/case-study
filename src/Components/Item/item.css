@@ -31,7 +31,8 @@
     transition-duration: 5s;
 }
 .additional-info{
-    padding-top:20px ;
+    padding-top:10px;
+    margin-bottom:10px
 }
 .contact-informations{
     margin: auto;
