@@ -13,14 +13,15 @@ const SingleItem = (props)=>{
         user.login.username === userId
     )
     const user = singleUser[0]
-    console.log(props.coords)
-
+    const lta = parseFloat(user.location.coordinates.latitude)
+    const lng = parseFloat(user.location.coordinates.longitude)
+    console.log( lta + lng)
     return(
         <div>
         <div className="navigation">
         <Link to="/">
-        <div class="button_cont" align="center">
-            <a class="example_f" href="add-website-here" target="_blank" rel="nofollow">
+        <div className="button_cont" align="center">
+            <a className="example_f" href="add-website-here" target="_blank" rel="nofollow">
                 <span>Back</span></a>
                 </div>
         </Link>
@@ -34,7 +35,7 @@ const SingleItem = (props)=>{
             <div className="number"><span>Nationality: </span>{user.nat}</div>
 
             </div>
-            <GoogleMap isMarkerShown/>
+            <GoogleMap lat= {lta} lng= {lng }isMarkerShown/>
         </div>
         </div>
 
