@@ -47,12 +47,14 @@ const SingleItem = (props)=>{
         </div>
         <div className="single-item-container"> 
             <div className="user-image"> <img src={user.picture.medium} alt=""/></div>
+            <div className="info-container">
             <div className="additional-info"><h2 className="name">{user.name.title}.{user.name.first} {user.name.last}</h2></div>
             <div className="contact-informations"> 
             <div className="email"><span>Email: </span>{user.email}</div>
             <div className="number"><span>Number: </span>{user.phone}</div>
             <div className="nationality"><span>Nationality: </span>{user.nat}</div>
             <div className="distance">You are <b>{distance} </b>km far away from {user.name.title}.{user.name.first} {user.name.last} </div>
+            </div>
             </div>
             <GoogleMap lat= {lat} lng= {lng }isMarkerShown/>
         </div>
