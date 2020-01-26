@@ -1,5 +1,4 @@
 import {getDistance} from "geolib"
-import * as geolib from 'geolib';
 
 const findDistance = (locations) => {
     console.log(locations.a)
