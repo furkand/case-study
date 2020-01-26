@@ -37,3 +37,10 @@
 .additional-info{
     padding-top:20px ;
 }
+.contact-informations{
+    margin: auto;
+    display: table;
+}
+.email span , .number span {
+    font-weight: bold;
+}

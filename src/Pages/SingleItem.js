@@ -1,7 +1,7 @@
 import React ,{useContext}from "react"
 import {UsersContext} from "../context/context"
 import { geolocated } from "react-geolocated";
-
+import GoogleMap from "../map"
 
 
 const SingleItem = (props)=>{
@@ -17,7 +17,13 @@ const SingleItem = (props)=>{
         <div className="single-item-container"> 
             <div className="user-image"> <img src={user.picture.medium} alt=""/></div>
             <div className="additional-info"><h2 className="name">{user.name.title}.{user.name.first} {user.name.last}</h2></div>
+            <div className="contact-informations"> 
+            <div className="email"><span>Email: </span>{user.email}</div>
+            <div className="number"><span>Number: </span>{user.phone}</div>
+            <div className="number"><span>Nationality: </span>{user.nat}</div>
 
+            </div>
+            <GoogleMap isMarkerShown/>
         </div>
 
     )
