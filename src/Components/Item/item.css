@@ -1,0 +1,39 @@
+.card {
+    width: 100% !important;
+}
+.content img {
+    width:50px !important;
+}
+
+.get-contact{
+    box-shadow: 0 0 0 1px #2185d0 inset!important;
+    color: #2185d0!important;
+    border-top-right-radius: .28571429rem;
+    border-bottom-right-radius: .28571429rem;
+    border-left: none;
+    margin-left: 0;
+    border-top-left-radius: .28571429rem;
+    border-bottom-left-radius: .28571429rem;
+
+
+}
+.user-image{
+    margin:auto;
+    display:table;
+}
+.single-item-container{
+    padding-top:40px;
+
+}
+.user-image img {
+    border-radius: 100%;
+}
+.additional-info h2{
+    text-align: center;
+}
+.card{
+    transition-duration: 5s;
+}
+.additional-info{
+    padding-top:20px ;
+}
