@@ -18,10 +18,12 @@ const SingleItem = (props)=>{
     return(
         <div>
         <div className="navigation">
+        <Link to="/">
         <div class="button_cont" align="center">
             <a class="example_f" href="add-website-here" target="_blank" rel="nofollow">
                 <span>Back</span></a>
                 </div>
+        </Link>
         </div>
         <div className="single-item-container"> 
             <div className="user-image"> <img src={user.picture.medium} alt=""/></div>
