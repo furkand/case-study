@@ -3,7 +3,7 @@ import {Card} from "semantic-ui-react"
 import ItemContent from "../ItemContent"
 import ItemButtons from "../ItemButtons"
 import "./item.css"
-import {Transition, animated} from "react-spring"
+
 
 const ItemCard = ({item}) =>{
     const name = `${item.name.title} ${item.name.first} ${item.name.last}`
