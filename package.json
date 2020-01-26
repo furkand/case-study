@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "geolib": "^3.2.1",
     "google-map-react": "^1.1.5",
     "google-maps-react": "^2.0.2",
     "maps": "^0.3.3",

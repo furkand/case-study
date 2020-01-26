@@ -1,27 +1,47 @@
-import React ,{useContext}from "react"
+import React ,{useContext,useState}from "react"
 import {UsersContext} from "../context/context"
 import { geolocated } from "react-geolocated";
-import GoogleMap from "../map"
+import GoogleMap from "../Components/map"
 import {Link} from 'react-router-dom';
-import { Menu, Segment } from 'semantic-ui-react';
-
+import findDistance from "../Components/distance"
 
 const SingleItem = (props)=>{
     const userId = props.match.params.userId;
     const users = useContext(UsersContext)
+
     const singleUser = users.filter( user=>
         user.login.username === userId
     )
     const user = singleUser[0]
+    
     const lat = parseFloat(user.location.coordinates.latitude)
     const lng = parseFloat(user.location.coordinates.longitude)
-    return(
-        <div>
+    let distance
+
+    if(props.coords){
+        const latU = props.coords.latitude
+        const lngU = props.coords.longitude
+        const distances = {
+            a:lat,
+            b:lng,
+            c:latU,
+            d:lngU
+        }
+        distance = findDistance(distances)/1000
+
+    }
+   
+    
+
+    return !props.isGeolocationAvailable ? ( <div>Your browser does not support Geolocation</div>
+    ) : !props.isGeolocationEnabled ? (
+        <div>Geolocation is not enabled</div>
+    ) : props.coords ?
+        ( <div>
         <div className="navigation">
-        <Link to="/">
+        <Link className="example_f"to="/">
         <div className="button_cont" align="center">
-            <a className="example_f" href="add-website-here" target="_blank" rel="nofollow">
-                <span>Back</span></a>
+            Back
                 </div>
         </Link>
         </div>
@@ -31,13 +51,14 @@ const SingleItem = (props)=>{
             <div className="contact-informations"> 
             <div className="email"><span>Email: </span>{user.email}</div>
             <div className="number"><span>Number: </span>{user.phone}</div>
-            <div className="number"><span>Nationality: </span>{user.nat}</div>
+            <div className="nationality"><span>Nationality: </span>{user.nat}</div>
+            <div className="distance">You are <b>{distance} </b>km far away from {user.name.title}.{user.name.first} {user.name.last} </div>
             </div>
             <GoogleMap lat= {lat} lng= {lng }isMarkerShown/>
         </div>
-        </div>
-
-    )
+        </div>): (
+            <div className="loading">Getting the location data&hellip; </div>
+        );
 }
 
 export default  geolocated({
