@@ -56,5 +56,5 @@ export default  geolocated({
     positionOptions: {
         enableHighAccuracy: false,
     },
-    userDecisionTimeout: 5000,
+    userDecisionTimeout: 10000,
 })(SingleItem);
