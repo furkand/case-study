@@ -26,11 +26,9 @@ const SingleItem = (props)=>{
     }
    
     
+    console.log(props.isGeolocationAvailable)
 
-    return !props.isGeolocationAvailable ? ( <div>Your browser does not support Geolocation</div>
-    ) : !props.isGeolocationEnabled ? (
-        <div>Geolocation is not enabled</div>
-    ) : props.coords ?( <div>
+    return  props.coords ?( <div>
         <div className="navigation">
             <Link className="example_f"to="/">
             <div className="button_cont" align="center">Back</div>
@@ -49,7 +47,12 @@ const SingleItem = (props)=>{
              </div>
             <GoogleMap lat= {lat} lng= {lng }isMarkerShown/>
         </div>
-        </div>): (<div className="loading">Getting the location data&hellip; </div>);
+        </div>): (<div class="ui segment loading">
+  <div className="ui active inverted dimmer">
+    <div className="ui text loader">Loading</div>
+  </div>
+  <p></p>
+</div>);
 }
 
 export default  geolocated({
